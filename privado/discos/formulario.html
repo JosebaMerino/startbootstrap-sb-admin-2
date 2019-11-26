@@ -269,8 +269,32 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
-
+                <div class="container-fluid ">
+                    <div class="row">
+                        <form class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto card">
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h5> Añadir discos </h5>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Cover" name="cover" pattern="([--:\w?@%&+~#=]*\.[a-z]{2,4}\/{0,2})((?:[?&](?:\w+)=(?:\w+))+|[--:\w?@%&+~#=]+)?" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Título" name="titulo"> 
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Grupo" name="grupo"> 
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Cover" name="cover"> 
+                                </div>
+                                <button class="btn btn-primary btn-block" type="submit"> Enviar</button>
+                            </div>
+                            <!-- .card-body-->
+                        </form>
+                        <!-- .card -->
+                    </div>
+                    <!-- .row-->
                 </div>
                 <!-- /.container-fluid -->
 
