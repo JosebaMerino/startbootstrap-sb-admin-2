@@ -63,30 +63,3 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-resume/blob/gh-pages/LICENSE) license.
-
-
-# Enunciado
-
-2 links, 
-
-## privado/discos/index.html
-va a tabla (adaptada para discos)
-
-id | cover | titulo | grupo | fecha
-
-## privado/discos/formurario.html
-
-formulario para añadir disco y poner un icono guai
-
-```html
-    <i class="fas fa-compact-disc"></i>
-```
-
-(mirar un ejemplo de formulario de dentro de la plantilla)
-
-cover:
-titulo:
-grupo:
-fecha: (con un selector de fecha)
-
-crear (botón)
