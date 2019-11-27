@@ -90,3 +90,14 @@ grupo:
 fecha: (con un selector de fecha)
 
 crear (botón)
+
+## Enunciado
+
+Cambiar login.
+Quitar imagen
+poner semitransparencia al formulario
+Poner una imagen detras del formulario
+
+Ir cambiando los textos
+
+poner required o patterns
