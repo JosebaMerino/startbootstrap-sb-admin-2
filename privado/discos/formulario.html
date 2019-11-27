@@ -278,8 +278,8 @@
                                 <div class="card-title">
                                     <h5> Añadir discos </h5>
                                 </div>
-                                <label for="conver"> Cover:</label>
                                 <div class="form-group">
+                                    <label for="conver"> Cover*:</label>
                                     <input type="text"
                                         name="cover" id="cover"
                                         onblur="cargarImagen(this.value)"
@@ -288,17 +288,45 @@
                                         pattern=".*(jpg|png|jpeg|gif)$"
                                         title="Introduzca una URL valida"
                                         required
+                                        value="https://st2.depositphotos.com/1703608/10869/i/950/depositphotos_108693090-stock-photo-portrait-of-four-dogs-sitting.jpg"
                                     >
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Título" name="titulo" pattern="(.){1,100}" required title="Introduzca un titulo que este entre 1 y 100 caracteres">
+                                    <label for="titulo"> Titulo*:</label>
+                                    <input type="text"
+                                        name="titulo" id="titulo"
+                                        class="form-control"
+                                        placeholder="Título"
+                                        pattern="(.){1,100}"
+                                        title="Introduzca un titulo que este entre 1 y 100 caracteres"
+                                        required
+                                        value="El gato no cesa"
+                                    >
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Grupo" name="grupo" pattern="(.){1,100}" required title="Introduzca un nombre de grupo que este entre 1 y 100 caracteres">
+                                    <label for="grupo"> Grupo*:</label>
+                                    <input type="text"
+                                        name="grupo" id="grupo"
+                                        class="form-control"
+                                        placeholder="Grupo"
+                                        pattern="(.){1,100}"
+                                        title="Introduzca un nombre de grupo que este entre 1 y 100 caracteres"
+                                        required
+                                        value="Perroes del Silencio"
+                                    >
+
                                 </div>
-                                <label for="">*Fecha (TODO: https://jqueryui.com/datepicker/)</label>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" placeholder="Fecha" name="fecha" pattern="^((19|20)\d{2}[\/](0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])|(0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])[\/](19|20)\d{2})$" required title="Introduzca una fecha válida, por ejemplo 2019/11/23 o 11/23/2019">
+                                    <label for="fecha">*Fecha (TODO: https://jqueryui.com/datepicker/)</label>
+                                    <input type="text"
+                                        name="fecha" id="fecha"
+                                        class="form-control"
+                                        placeholder="Fecha"
+                                        pattern="^((19|20)\d{2}[\/](0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])|(0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])[\/](19|20)\d{2})$"
+                                        title="Introduzca una fecha válida, por ejemplo 2019/11/23 o 11/23/2019"
+                                        required
+                                        value="11/23/2019"
+                                    >
                                 </div>
                                 <button class="btn btn-primary btn-block" type="submit"> Enviar</button>
                                 <button class="btn btn-primary btn-block" type="submit" data-toggle="modal" data-target="#discos-modal"> Modal</button>
