@@ -277,7 +277,7 @@
                                     <h5> Añadir discos </h5>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Cover" name="cover" pattern="^((http(|s))|\w):.*\.(jpg|png|jpeg|gif)$" required title="Introduzca una URL valida">
+                                    <input type="text" class="form-control" placeholder="Cover" name="cover" pattern=".*(jpg|png|jpeg|gif)$" required title="Introduzca una URL valida">
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Título" name="titulo" pattern="(.){1,100}" required title="Introduzca un titulo que este entre 1 y 100 caracteres">
@@ -288,7 +288,7 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Fecha" name="fecha" pattern="^((19|20)\d{2}[\/](0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])|(0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])[\/](19|20)\d{2})$" required title="Introduzca una fecha válida, por ejemplo 2019/11/23 o 11/23/2019">
                                 </div>
-                                <button class="btn btn-primary btn-block" type="submit"> Enviar</button>
+                                <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#discos-modal"> Enviar</button>
                             </div>
                             <!-- .card-body-->
                         </form>
@@ -340,6 +340,28 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="discos-modal" tabindex="-1" role="dialog" aria-labelledby="discos-modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Disco añadido correctamente</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="modal-body">
+          Disco añadido correctamente
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <a href="privado/discos/index.html" class="btn btn-primary text-white">Ver discos</a>`
+          
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
