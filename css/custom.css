@@ -4,14 +4,29 @@ Aqui pondremos nuestro css personal
 
 /* Etiquetas
 ***************************************************************/
+/*
+input[type="text"]:valid,
+input[type="url"]:valid,
+input[type="email"]:valid {
+    color: green;
+}*/
+
+input[type="text"]:invalid:focus,
+input[type="url"]:invalid:focus,
+input[type="email"]:invalid:focus {
+    color: #e74a3b;
+    background-color: #fff;
+    border-color: rgba(231, 73, 59, 0.452);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(231, 73, 59, 0.452);
+}
+
 table img {
     width: 100px;
     height: 100px;
 }
-
 /* Clases
 ***************************************************************/
-
 
 /* Identificadores
 ***************************************************************/

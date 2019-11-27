@@ -18,10 +18,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/custom.css">
 
 </head>
 
@@ -94,8 +96,8 @@
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+                        <i class="fa fa-bars"></i>
+                    </button>
 
                     <!-- Topbar Search -->
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -103,8 +105,8 @@
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -270,14 +272,23 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid ">
-                    <div class="row">
-                        <form class="col-12 col-sm-10 col-md-8 col-lg-6 mx-auto card">
+                    <div class="row justify-content-center">
+                        <form action="URL_CONTROLADOR" method="POST" class="col-12 col-sm-10 col-md-8 col-lg-6 card">
                             <div class="card-body">
                                 <div class="card-title">
                                     <h5> Añadir discos </h5>
                                 </div>
+                                <label for="conver"> Cover:</label>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Cover" name="cover" pattern=".*(jpg|png|jpeg|gif)$" required title="Introduzca una URL valida">
+                                    <input type="text"
+                                        name="cover" id="cover"
+                                        onblur="cargarImagen(this.value)"
+                                        class="form-control"
+                                        placeholder="Cover"
+                                        pattern=".*(jpg|png|jpeg|gif)$"
+                                        title="Introduzca una URL valida"
+                                        required
+                                    >
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Título" name="titulo" pattern="(.){1,100}" required title="Introduzca un titulo que este entre 1 y 100 caracteres">
@@ -285,14 +296,33 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Grupo" name="grupo" pattern="(.){1,100}" required title="Introduzca un nombre de grupo que este entre 1 y 100 caracteres">
                                 </div>
+                                <label for="">*Fecha (TODO: https://jqueryui.com/datepicker/)</label>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Fecha" name="fecha" pattern="^((19|20)\d{2}[\/](0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])|(0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])[\/](19|20)\d{2})$" required title="Introduzca una fecha válida, por ejemplo 2019/11/23 o 11/23/2019">
+                                    <input type="date" class="form-control" placeholder="Fecha" name="fecha" pattern="^((19|20)\d{2}[\/](0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])|(0?[1-9]|1[0-2])[\/](0?[1-9]|[12]\d|3[01])[\/](19|20)\d{2})$" required title="Introduzca una fecha válida, por ejemplo 2019/11/23 o 11/23/2019">
                                 </div>
-                                <button class="btn btn-primary btn-block" type="button" data-toggle="modal" data-target="#discos-modal"> Enviar</button>
+                                <button class="btn btn-primary btn-block" type="submit"> Enviar</button>
+                                <button class="btn btn-primary btn-block" type="submit" data-toggle="modal" data-target="#discos-modal"> Modal</button>
                             </div>
                             <!-- .card-body-->
                         </form>
                         <!-- .card -->
+                        <div class="col-sm-6 bg-register-image" id="container-img">
+                            <!-- Aqui se cargara la imagen -->
+                        </div>
+                        <script>
+                            function cargarImagen(urlImagen) {
+                                console.debug('urlImagen %s', urlImagen);
+
+                                
+                                let container = document.getElementById('container-img');
+                                /*let imagen = '<img src="'+ url +'" alt="imagen del disco">';
+                                container.innerHTML = imagen;*/
+                                container.style.background = "url("+urlImagen+")";
+                                container.style.backgroundPosition = "center";
+                                container.style.backgroundSize = "contain";
+                                container.style.backgroundRepeat = "no-repeat";
+                            }
+                        </script>
                     </div>
                     <!-- .row-->
                 </div>
